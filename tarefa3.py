@@ -1,54 +1,47 @@
-programa_ligado = True
 
-while programa_ligado == True:
 
-    # ----- TELA DE LOGIN -----
-    logado = False
+    while True:
 
-    print("========================================")
-    print("SISTEMA DE CADASTRO DE USUÁRIOS")
-    print("========================================")
-    print("--- LOGIN ---")
+    print("Bem-vindo ao sistema de cadastro de usuários!")
 
-    while logado == False:
-        usuario = input("Usuário: ")
-        senha = input("Senha: ")
+    while True:
+        usuario = input("Digite seu usuário: ")
+        senha = input("Digite sua senha: ")
 
         if usuario == "admin" and senha == "123":
             print("Login realizado com sucesso!")
-            logado = True
+            break
         else:
-            print("Usuário ou senha inválidos. Tente novamente.")
+            print("Usuário ou senha incorretos, tente de novo.")
 
-    # ----- TELA DE MENU -----
     print("")
-    print("")  # linhas em branco para simular a tela "limpa"
 
-    no_menu = True
+    sair_do_programa = False
 
-    while no_menu == True:
-        print("========================================")
-        print("MENU PRINCIPAL")
-        print("========================================")
+    while True:
+        print("O que você deseja fazer?")
         print("1 - Cadastrar usuário")
         print("2 - Listar usuários")
         print("3 - Editar usuário")
         print("4 - Excluir usuário")
-        print("5 - Logout")
-        print("6 - Encerrar")
+        print("5 - Sair da conta")
+        print("6 - Encerrar o programa")
 
-        opcao = input("Escolha uma opção: ")
+        opcao = input("Digite o número da opção: ")
 
         if opcao == "5":
-            print("Saindo da conta...")
-            no_menu = False  # volta para a tela de login
+            print("Saindo da sua conta...")
+            break
         elif opcao == "6":
-            print("Encerrando o programa...")
-            no_menu = False
-            programa_ligado = False  # encerra tudo
+            print("Encerrando o programa, até mais!")
+            sair_do_programa = True
+            break
         elif opcao == "1" or opcao == "2" or opcao == "3" or opcao == "4":
-            print("Essa funcionalidade ainda não foi implementada.")
+            print("Essa opção ainda vai ser feita mais pra frente.")
         else:
-            print("Opção inválida!")
+            print("Não entendi essa opção, tenta de novo.")
 
-print("Programa encerrado.")
+        print("")
+
+    if sair_do_programa == True:
+        break
