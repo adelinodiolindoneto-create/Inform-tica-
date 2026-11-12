@@ -1,14 +1,15 @@
-produtos = []
+import random
 
-produto = input("Nome do produto: ")
-produtos = produtos + [produto]
+nomes = []
 
-resposta = input("Deseja adicionar outro? (s/n): ")
+nome = input("Nome de quem comprou a rifa (digite fim para parar): ")
 
-while resposta == "s":
-    produto = input("Nome do produto: ")
-    produtos = produtos + [produto]
-    resposta = input("Deseja adicionar outro? (s/n): ")
+while nome != "fim":
+    nomes = nomes + [nome]
+    nome = input("Nome de quem comprou a rifa (digite fim para parar): ")
 
-print("Lista de produtos:")
-print(produtos)
+if nomes == []:
+    print("Ninguém comprou a rifa.")
+else:
+    ganhador = random.choice(nomes)
+    print("O ganhador é:", ganhador)
